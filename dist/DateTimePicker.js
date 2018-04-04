@@ -185,8 +185,11 @@ $.cf = {
         module.exports = factory(require("jquery"));
     }
     else {
-        // Browser globals
-        factory(jQuery);
+        if(factory) {
+            // Browser globals
+            factory(jQuery);
+        }
+
     }
 }(function ($) {
     "use strict";
